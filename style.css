@@ -168,6 +168,11 @@ section {
     text-align: center;
 }
 
+#projects > .project {
+    max-width: 600px;
+    margin: 0 auto 30px;
+}
+
 .project {
     max-width: 600px;
     margin: 0 auto;
