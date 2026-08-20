@@ -28,16 +28,21 @@ header {
     border-bottom: 1px solid #e5e7eb;
     position: sticky;
     top: 0;
-    z-index: 100;
+    z-index: 1000;
 }
 
 nav {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 18px 20px;
+
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 nav h2 {
+    margin: 0;
     font-size: 1.4rem;
 }
 
@@ -56,6 +61,7 @@ nav a {
 
 nav a:hover {
     color: var(--primary);
+    opacity: 0.6;
 }
 
 #hero {
@@ -79,9 +85,15 @@ nav a:hover {
 
 #hero p {
     max-width: 650px;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
     color: #4b5563;
+    line-height: 1.6;
     margin-bottom: 35px;
+    margin: 0 auto 10px;
+}
+
+#hero p:last-of-type {
+    margin-bottom: 30px;
 }
 
 #hero a {
@@ -99,6 +111,7 @@ nav a:hover {
 #hero a:hover {
     background-color: #1d4ed8;
     transform: translateY(-2px);
+    opacity: 0.85;
 }
 
 section {
@@ -124,6 +137,11 @@ section {
 
 #about {
     text-align: center;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 80px 20px;
+    line-height: 1.7;
+    margin-bottom: 15px;
 }
 
 #about p {
@@ -137,28 +155,28 @@ section {
     text-align: center;
     background-color: #f1f5f9;
     max-width: none;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 80px 20px;
 }
 
-#skills ul {
+.skills-list {
+    max-width: 700px;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
-    gap: 15px;
-    list-style: none;
+    gap: 12px;
 }
 
-#skills li {
-    padding: 12px 22px;
+.skills-list span {
+    padding: 10px 16px;
     background-color: var(--card);
-    border: 1px solid #e5e7eb;
-    border-radius: 50px;
+    border: 1px solid #e4e4e7;
     font-weight: 500;
+    border-radius: 20px;
     transition: 0.3s ease;
 }
 
-#skills li:hover {
+.skills-list span:hover {
     transform: translateY(-3px);
     border-color: var(--primary);
     color: var(--primary);
@@ -166,11 +184,24 @@ section {
 
 #projects {
     text-align: center;
+    padding: 80px 20px;
 }
 
 #projects > .project {
     max-width: 600px;
     margin: 0 auto 30px;
+    padding: 30px;
+    background-color: white;
+    border: 1px solid #e4e4e7;
+    border-radius: 12px;
+    text-align: left;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2 ease, box-shadow 0.2s ease;
+}
+
+#projects > .project:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
 .project {
@@ -182,6 +213,11 @@ section {
     border-radius: 12px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     transition: 0.3s ease;
+}
+
+.project p {
+    line-height: 1.6;
+    margin-bottom: 15px;
 }
 
 .project:hover {
@@ -197,6 +233,7 @@ section {
 .project p {
     color: #4b5563;
     margin-bottom: 15px;
+    line-height: 1.6;
 }
 
 .project:hover {
@@ -206,15 +243,18 @@ section {
 .project-tech {
     color: var(--primary);
     font-weight: bold;
+    font-size: 0.9rem;
 }
 
 .project-links {
+    display: flex;
+    gap: 12px;
     margin-top: 20px;
 }
 
 .project-links a {
     display: inline-block;
-    padding: 8px 16px;
+    padding: 10px 16px;
     margin: 0 5px;
     border-radius: 6px;
     text-decoration: none;
@@ -225,6 +265,14 @@ section {
 
 .project-links a:hover {
     background-color: #1d4ed8;
+    opacity: 0.8;
+}
+
+.project-image {
+    width: 100%;
+    display: block;
+    margin-bottom: 25px;
+    border-radius: 8px;
 }
 
 #contact {
@@ -262,6 +310,7 @@ footer {
     border-top: 1px solid #e5e7eb;
     color: #6b7280;
     font-size: 0.9rem;
+    margin-top: 40px;
 }
 
 @media (max-width: 600px) {
@@ -275,9 +324,9 @@ footer {
     }
 
     nav ul {
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
     }
 
     #hero {
@@ -294,7 +343,7 @@ footer {
 
     section {
         padding: 70px 20px;
-        scroll-margin-top: 170px;
+        scroll-margin-top: 120px;
     }
     
     #about h2,
